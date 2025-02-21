@@ -1,17 +1,16 @@
 /// <reference types="cypress" />
 
-import React from 'react';
-import { Quiz } from '../../client/src/components/Quiz';
+describe('Tech Quiz E2E Test', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
 
-describe('Quiz Component', () => {
   it('should start the quiz and display the first question', () => {
-    cy.mount(<Quiz />);
     cy.get('button').contains('Start').click();
     cy.get('.question').should('exist');
   });
 
   it('should display the next question after answering', () => {
-    cy.mount(<Quiz />);
     cy.get('button').contains('Start').click();
     cy.get('.question').should('exist');
     cy.get('button').contains('Next').click();
@@ -19,7 +18,6 @@ describe('Quiz Component', () => {
   });
 
   it('should display the score after the quiz is over', () => {
-    cy.mount(<Quiz />);
     cy.get('button').contains('Start').click();
     cy.get('.question').should('exist');
     // Mock answering all questions
