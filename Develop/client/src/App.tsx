@@ -1,11 +1,13 @@
+import React from 'react';
 import Quiz from './components/Quiz';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div>
+      <h1>Tech Quiz</h1>
       <Quiz />
     </div>
   );
-}
+};
 
 export default App;
